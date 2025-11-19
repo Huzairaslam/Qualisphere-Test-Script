@@ -1,0 +1,194 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e1]:
+  - generic [ref=e4]:
+    - complementary [ref=e5]:
+      - generic [ref=e7]:
+        - img "QualiSphere Logo" [ref=e9]
+        - navigation [ref=e10]:
+          - list [ref=e11]:
+            - listitem [ref=e12]:
+              - link "Dashboard" [ref=e13] [cursor=pointer]:
+                - /url: /qc-inspection-dashboard
+                - img [ref=e14]
+                - generic [ref=e19]: Dashboard
+            - listitem [ref=e20]:
+              - link "Perform Audit" [ref=e21] [cursor=pointer]:
+                - /url: /audit
+                - img [ref=e22]
+                - generic [ref=e24]: Perform Audit
+            - listitem [ref=e25]:
+              - link "Non Compliance List" [ref=e26] [cursor=pointer]:
+                - /url: /non-compliance
+                - img [ref=e27]
+                - generic [ref=e29]: Non Compliance List
+            - listitem [ref=e30]:
+              - button "Configuration" [ref=e31] [cursor=pointer]:
+                - img [ref=e32]
+                - generic [ref=e35]: Configuration
+                - img [ref=e36]
+        - button "<" [ref=e39] [cursor=pointer]
+    - generic [ref=e41]:
+      - banner [ref=e42]:
+        - generic [ref=e44]:
+          - heading "Create Audit" [level=4] [ref=e47]:
+            - generic [ref=e48]: Create Audit
+          - generic [ref=e50]:
+            - generic [ref=e52]:
+              - img "search" [ref=e54]:
+                - img [ref=e55]
+              - textbox "Search here..." [ref=e57]
+            - generic [ref=e58]:
+              - link [ref=e59] [cursor=pointer]:
+                - /url: "#"
+                - img [ref=e60]
+              - superscript [ref=e63]
+            - generic [ref=e64] [cursor=pointer]:
+              - generic [ref=e66]: HA
+              - generic [ref=e67]:
+                - generic [ref=e68]: Auditee
+                - generic [ref=e69]: Huzair Aslam
+            - button [ref=e70] [cursor=pointer]:
+              - img [ref=e71]
+        - separator [ref=e73]
+      - main [ref=e74]:
+        - generic [ref=e75]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: Create New Audit
+            - button "Go Back" [ref=e80] [cursor=pointer]:
+              - generic [ref=e81]: Go Back
+          - generic [ref=e83]:
+            - generic [ref=e84]:
+              - generic [ref=e87]:
+                - generic "Demand Title" [ref=e89]: "* Demand Title"
+                - textbox "* Demand Title" [ref=e93]:
+                  - /placeholder: Enter Demand Title
+              - generic [ref=e96]:
+                - generic "Demand ID" [ref=e98]: "* Demand ID"
+                - textbox "* Demand ID" [ref=e102]:
+                  - /placeholder: Enter Demand ID
+                  - text: D-0021
+              - generic [ref=e105]:
+                - generic "Demand Status" [ref=e107]
+                - generic [ref=e111] [cursor=pointer]:
+                  - generic [ref=e112]:
+                    - combobox "Demand Status" [ref=e114]
+                    - generic "Approved" [ref=e115]
+                  - generic:
+                    - img:
+                      - img
+                  - img [ref=e117]:
+                    - img [ref=e118]
+            - generic [ref=e120]:
+              - generic [ref=e123]:
+                - generic "Change Request Title" [ref=e125]: "* Change Request Title"
+                - textbox "* Change Request Title" [ref=e129]:
+                  - /placeholder: Enter Change Request Title
+              - generic [ref=e132]:
+                - generic "CR ID" [ref=e134]
+                - textbox "CR ID" [ref=e138]:
+                  - /placeholder: Enter CR ID
+                  - text: CR-9821
+              - generic [ref=e141]:
+                - generic "Cr Status" [ref=e143]
+                - generic [ref=e147] [cursor=pointer]:
+                  - generic [ref=e148]:
+                    - combobox "Cr Status" [ref=e150]
+                    - generic "Pending Approval" [ref=e151]
+                  - generic:
+                    - img:
+                      - img
+                  - img [ref=e153]:
+                    - img [ref=e154]
+            - generic [ref=e156]:
+              - generic [ref=e159]:
+                - generic "Product" [ref=e161]
+                - generic [ref=e165] [cursor=pointer]:
+                  - generic [ref=e166]:
+                    - combobox "Product" [ref=e168]
+                    - generic "Card Capture System" [ref=e169]
+                  - generic:
+                    - img:
+                      - img
+                  - img [ref=e171]:
+                    - img [ref=e172]
+              - generic [ref=e176]:
+                - generic "Audit Type" [ref=e178]: "* Audit Type"
+                - generic [ref=e182] [cursor=pointer]:
+                  - generic [ref=e183]:
+                    - combobox "* Audit Type" [ref=e185]
+                    - generic "Risk Assessment" [ref=e186]
+                  - generic:
+                    - img:
+                      - img
+                  - img [ref=e188]:
+                    - img [ref=e189]
+              - generic [ref=e193]:
+                - generic "Audit Category" [ref=e195]
+                - generic [ref=e199] [cursor=pointer]:
+                  - generic [ref=e200]:
+                    - combobox "Audit Category" [ref=e202]
+                    - generic "Project Risks" [ref=e203]
+                  - generic:
+                    - img:
+                      - img
+                  - img [ref=e205]:
+                    - img [ref=e206]
+            - generic [ref=e208]:
+              - generic [ref=e211]:
+                - generic "AuditClass" [ref=e213]
+                - generic [ref=e217] [cursor=pointer]:
+                  - generic [ref=e218]:
+                    - combobox "AuditClass" [expanded] [active] [ref=e220]:
+                      - listbox:
+                        - option "Financial Impact": 4c67a25b-aa4e-4b5e-a932-32f384160f05
+                    - generic: Select a Class
+                  - generic:
+                    - img:
+                      - img
+              - generic [ref=e223]:
+                - generic "Line Of Business" [ref=e225]
+                - generic [ref=e229] [cursor=pointer]:
+                  - generic [ref=e230]:
+                    - combobox "Line Of Business" [ref=e232]
+                    - generic: Select a LOB
+                  - generic:
+                    - img:
+                      - img
+              - generic [ref=e235]:
+                - generic "Business Sponsor" [ref=e237]
+                - textbox "Business Sponsor" [ref=e241]:
+                  - /placeholder: Enter Business Sponsor
+            - generic [ref=e242]:
+              - generic [ref=e245]:
+                - generic "Business Request Initiator" [ref=e247]
+                - textbox "Business Request Initiator" [ref=e251]:
+                  - /placeholder: Enter Business Request Initiator
+              - generic [ref=e254]:
+                - generic "Project Manager" [ref=e256]
+                - generic [ref=e260] [cursor=pointer]:
+                  - generic [ref=e261]:
+                    - combobox "Project Manager" [ref=e263]
+                    - generic: Select a Project Manager
+                  - generic:
+                    - img:
+                      - img
+              - generic [ref=e266]:
+                - generic "Teams" [ref=e268]: "* Teams"
+                - generic [ref=e272] [cursor=pointer]:
+                  - generic [ref=e273]:
+                    - combobox "* Teams" [ref=e277]
+                    - generic: Select Teams
+                  - generic:
+                    - img:
+                      - img
+            - button "Create Audit" [ref=e283] [cursor=pointer]:
+              - generic [ref=e284]: Create Audit
+      - contentinfo [ref=e285]:
+        - separator [ref=e286]
+        - link "© 2025 QualiSphere. All rights reserved." [ref=e290] [cursor=pointer]:
+          - /url: "#pablo"
+  - generic "Financial Impact" [ref=e297] [cursor=pointer]:
+    - generic [ref=e298]: Financial Impact
+```

@@ -1,0 +1,104 @@
+{
+  "username": [
+    { "role": "textbox", "name": "* E mail" },
+    { "role": "textbox", "name": "Input Email" }
+  ],
+  "password": [
+    { "role": "textbox", "name": "* Password" },
+    { "placeholder": "Enter password" }
+  ],
+  "loginButton": [
+    { "role": "button", "name": "Login" },
+    { "text": "Sign In" }
+  ],
+  "performAuditLink": [
+    { "role": "link", "name": "Perform Audit" },
+    { "text": "Start Audit" }
+  ],
+  "createButton": [
+    { "role": "button", "name": "Create" },
+    { "text": "Submit" }
+  ],
+  "demandTitle": [
+    { "role": "textbox", "name": "* Demand Title" },
+    { "id": "demandTitle" }
+  ],
+  "demandId": [
+    { "role": "textbox", "name": "* Demand ID" },
+    { "id": "demandId" }
+  ],
+  "demandStatus": [
+    { "role": "combobox", "name": "Demand Status" }
+  ],
+  "demandStatusApproved": [
+    { "text": "Approved" }
+  ],
+  "changeRequestTitle": [
+    { "role": "textbox", "name": "* Change Request Title" },
+    { "id": "changeRequestTitle" }
+  ],
+  "crId": [
+    { "role": "textbox", "name": "CR ID" },
+    { "id": "crId" }
+  ],
+  "crStatus": [
+    { "role": "combobox", "name": "Cr Status" }
+  ],
+  "crStatusPending": [
+    { "text": "Pending Approval" }
+  ],
+  "product": [
+    { "role": "combobox", "name": "Product" }
+  ],
+  "productOption": [
+    { "text": "Card Capture System" }
+  ],
+  "auditType": [
+    { "role": "combobox", "name": "* Audit Type" }
+  ],
+  "auditTypeOption": [
+    { "text": "Risk Assessment" }
+  ],
+  "auditCategory": [
+    { "role": "combobox", "name": "Audit Category" }
+  ],
+  "auditCategoryOption": [
+    { "text": "Project Risks" }
+  ],
+  "auditClass": [
+    { "role": "combobox", "name": "AuditClass" }
+  ],
+  "auditClassOption": [
+    { "title": "Financial Impact" }
+  ],
+  "lineOfBusiness": [
+    { "role": "combobox", "name": "Line Of Business" }
+  ],
+  "lineOfBusinessOption": [
+    { "text": "Product Testing" }
+  ],
+  "businessSponsor": [
+    { "role": "textbox", "name": "Business Sponsor" },
+    { "id": "businessSponsor" }
+  ],
+  "businessInitiator": [
+    { "role": "textbox", "name": "Business Request Initiator" },
+    { "id": "businessInitiator" }
+  ],
+  "projectManager": [
+    { "role": "combobox", "name": "Project Manager" }
+  ],
+  "projectManagerOption": [
+    { "text": "Taimoor A Hasan" }
+  ],
+  "teamSelect": [
+    { "locator": ".ant-select-selection-overflow" }
+  ],
+  "teamOption": [
+    { "text": "Software Testing Team" }
+  ],
+  "createAuditButton": [
+    { "role": "button", "name": "Create Audit" },
+    { "text": "Submit" }
+  ]
+}

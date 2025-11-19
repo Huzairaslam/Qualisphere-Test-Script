@@ -1,0 +1,20 @@
+Filled username using locator { role: 'textbox', name: '* E mail' }
+Filled password using locator { role: 'textbox', name: '* Password' }
+Clicked loginButton using locator { role: 'button', name: 'Login' }
+Clicked performAuditLink using locator { role: 'link', name: 'Perform Audit' }
+Clicked createButton using locator { role: 'button', name: 'Create' }
+Filled demandTitle using locator { role: 'textbox', name: '* Demand Title' }
+Filled demandId using locator { role: 'textbox', name: '* Demand ID' }
+Clicked demandStatus using locator { role: 'combobox', name: 'Demand Status' }
+Clicked demandStatusApproved using locator { text: 'Approved' }
+Filled changeRequestTitle using locator { role: 'textbox', name: '* Change Request Title' }
+Filled crId using locator { role: 'textbox', name: 'CR ID' }
+Clicked crStatus using locator { role: 'combobox', name: 'Cr Status' }
+Clicked crStatusPending using locator { text: 'Pending Approval' }
+Clicked product using locator { role: 'combobox', name: 'Product' }
+Clicked productOption using locator { text: 'Card Capture System' }
+Clicked auditType using locator { role: 'combobox', name: '* Audit Type' }
+Clicked auditTypeOption using locator { text: 'Risk Assessment' }
+Clicked auditCategory using locator { role: 'combobox', name: 'Audit Category' }
+Clicked auditCategoryOption using locator { text: 'Project Risks' }
+Clicked auditClass using locator { role: 'combobox', name: 'AuditClass' }
