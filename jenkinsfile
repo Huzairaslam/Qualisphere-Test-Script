@@ -1,0 +1,30 @@
+pipeline {
+  agent any
+
+  tools { nodejs "NodeJS_18" }
+
+  stages {
+    stage('Checkout') {
+      steps { checkout scm }
+    }
+
+    stage('Install') {
+      steps {
+        bat 'npm ci'
+        bat 'npx playwright install'
+      }
+    }
+
+    stage('Run Tests') {
+      steps {
+        bat 'npx playwright test --reporter=html'
+      }
+    }
+
+    stage('Archive Report') {
+      steps {
+        archiveArtifacts artifacts: 'playwright-report/**', fingerprint: true
+      }
+    }
+  }
+}
