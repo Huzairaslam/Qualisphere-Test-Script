@@ -23,10 +23,14 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    ['line'], // Optional: Keeps the line reporter for simple terminal output
-    ['allure-playwright', {
-      resultsDir: 'allure-results', // Optional: customize where the results are saved
-    }],
+    ['list'], // Optional: for basic console output
+    [
+      'allure-playwright', // This generates the Allure files
+      {
+        // You can change the results directory here if needed
+        resultsDir: 'allure-results',
+      },
+    ],
   ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {

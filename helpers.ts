@@ -1,19 +1,38 @@
 import { Page, Locator } from '@playwright/test';
-import locators from './locators.json';
+import locatorsData from './locators.json';
+import { healAndAppendLocator } from './llmHealer';
+import fs from 'fs';
+import path from 'path';
 
-type LocatorKey = keyof typeof locators;
+type SingleLocator =
+  | { role: string; name?: string }
+  | { text: string }
+  | { placeholder: string }
+  | { id: string }
+  | { locator: string };
 
-function getLocator(page: Page, l: any): Locator | null {
-  if (l.role) return page.getByRole(l.role, { name: l.name });
-  if (l.text) return page.getByText(l.text);
-  if (l.placeholder) return page.getByPlaceholder(l.placeholder);
-  if (l.id) return page.locator(`#${l.id}`);
-  if (l.locator) return page.locator(l.locator);
+// Create a mutable copy of locators with proper typing
+const locators: Record<string, SingleLocator[]> = locatorsData as Record<string, SingleLocator[]>;
+type LocatorKey = string;
+const LOCATORS_FILE = path.join(__dirname, 'locators.json');
+
+function getLocator(page: Page, l: SingleLocator): Locator | null {
+  if ('role' in l) return page.getByRole(l.role as any, { name: l.name });
+  if ('text' in l) return page.getByText(l.text);
+  if ('placeholder' in l) return page.getByPlaceholder(l.placeholder);
+  if ('id' in l) return page.locator(`#${l.id}`);
+  if ('locator' in l) return page.locator(l.locator);
   return null;
 }
 
-export async function clickByName(page: Page, elementName: LocatorKey) {
-  const elementLocators = locators[elementName];
+// --- CLICK ---
+export async function clickByName(page: Page, elementName: string) {
+  if (!locators[elementName]) {
+    throw new Error(`Element "${elementName}" not found in locators.json`);
+  }
+  
+  let elementLocators: SingleLocator[] = locators[elementName];
+
   for (const l of elementLocators) {
     try {
       const locator = getLocator(page, l);
@@ -22,15 +41,40 @@ export async function clickByName(page: Page, elementName: LocatorKey) {
       await locator.click();
       console.log(`Clicked ${elementName} using locator`, l);
       return;
-    } catch (err) {
-      console.warn(`Locator failed for ${elementName}:`, l);
+    } catch (_) {}
+  }
+
+  // All locators failed → heal
+  console.log(`All locators failed for ${elementName}, invoking LLM healer...`);
+  const newLocator = (await healAndAppendLocator(page, elementLocators)) as unknown as SingleLocator | undefined;
+
+  if (newLocator) {
+    // Append to JSON and save
+    (locators[elementName] as SingleLocator[]).push(newLocator);
+    fs.writeFileSync(LOCATORS_FILE, JSON.stringify(locators, null, 2));
+    console.log(`Appended new locator for ${elementName}:`, newLocator);
+
+    // Retry with healed locator
+    const locator = getLocator(page, newLocator);
+    if (locator) {
+      await locator.waitFor({ state: 'visible', timeout: 3000 });
+      await locator.click();
+      console.log(`Clicked ${elementName} using healed locator`, newLocator);
+      return;
     }
   }
-  throw new Error(`All locators failed for ${elementName}`);
+
+  throw new Error(`All locators failed for ${elementName} even after LLM healing`);
 }
 
-export async function fillByName(page: Page, elementName: LocatorKey, value: string) {
-  const elementLocators = locators[elementName];
+// --- FILL ---
+export async function fillByName(page: Page, elementName: string, value: string) {
+  if (!locators[elementName]) {
+    throw new Error(`Element "${elementName}" not found in locators.json`);
+  }
+  
+  let elementLocators: SingleLocator[] = locators[elementName];
+
   for (const l of elementLocators) {
     try {
       const locator = getLocator(page, l);
@@ -39,9 +83,26 @@ export async function fillByName(page: Page, elementName: LocatorKey, value: str
       await locator.fill(value);
       console.log(`Filled ${elementName} using locator`, l);
       return;
-    } catch (err) {
-      console.warn(`Locator failed for ${elementName}:`, l);
+    } catch (_) {}
+  }
+
+  // All locators failed → heal
+  console.log(`All locators failed for ${elementName}, invoking LLM healer...`);
+  const newLocator = (await healAndAppendLocator(page, elementLocators)) as unknown as SingleLocator | undefined;
+
+  if (newLocator) {
+    (locators[elementName] as SingleLocator[]).push(newLocator);
+    fs.writeFileSync(LOCATORS_FILE, JSON.stringify(locators, null, 2));
+    console.log(`Appended new locator for ${elementName}:`, newLocator);
+
+    const locator = getLocator(page, newLocator);
+    if (locator) {
+      await locator.waitFor({ state: 'visible', timeout: 3000 });
+      await locator.fill(value);
+      console.log(`Filled ${elementName} using healed locator`, newLocator);
+      return;
     }
   }
-  throw new Error(`All locators failed for ${elementName}`);
+
+  throw new Error(`All locators failed for ${elementName} even after LLM healing`);
 }

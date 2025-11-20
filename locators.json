@@ -1,7 +1,9 @@
 {
   "username": [
-    { "role": "textbox", "name": "* E mail" },
-    { "role": "textbox", "name": "Input Email" }
+    { "role": "textbox", "name": "E mail" },
+    {"role": "textbox", "name": "* E mail" },
+    { "role": "textbox", "name": "Input Email" },
+    { "placeholder": "Enter email" }
   ],
   "password": [
     { "role": "textbox", "name": "* Password" },
@@ -69,7 +71,7 @@
     { "role": "combobox", "name": "AuditClass" }
   ],
   "auditClassOption": [
-    { "title": "Financial Impact" }
+    { "text": "Financial Impact" }
   ],
   "lineOfBusiness": [
     { "role": "combobox", "name": "Line Of Business" }
@@ -100,5 +102,14 @@
   "createAuditButton": [
     { "role": "button", "name": "Create Audit" },
     { "text": "Submit" }
+  ],
+  "ConfigurationLink": [
+    { "text": "button", "name": "Configuration" }
+  ],
+  "TeamType":[
+    {"role": "link","name":"Team Type"}
+  ],
+  "AddBtn":[
+    {"role": "button", "name":"+ Add"}
   ]
 }

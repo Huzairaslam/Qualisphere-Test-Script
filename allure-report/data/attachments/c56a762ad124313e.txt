@@ -1,0 +1,30 @@
+Filled username using locator { role: 'textbox', name: 'E mail' }
+Filled password using locator { role: 'textbox', name: '* Password' }
+Clicked loginButton using locator { role: 'button', name: 'Login' }
+Clicked performAuditLink using locator { role: 'link', name: 'Perform Audit' }
+Clicked createButton using locator { role: 'button', name: 'Create' }
+Filled demandTitle using locator { role: 'textbox', name: '* Demand Title' }
+Filled demandId using locator { role: 'textbox', name: '* Demand ID' }
+Clicked demandStatus using locator { role: 'combobox', name: 'Demand Status' }
+Clicked demandStatusApproved using locator { text: 'Approved' }
+Filled changeRequestTitle using locator { role: 'textbox', name: '* Change Request Title' }
+Filled crId using locator { role: 'textbox', name: 'CR ID' }
+Clicked crStatus using locator { role: 'combobox', name: 'Cr Status' }
+Clicked crStatusPending using locator { text: 'Pending Approval' }
+Clicked product using locator { role: 'combobox', name: 'Product' }
+Clicked productOption using locator { text: 'Card Capture System' }
+Clicked auditType using locator { role: 'combobox', name: '* Audit Type' }
+Clicked auditTypeOption using locator { text: 'Risk Assessment' }
+Clicked auditCategory using locator { role: 'combobox', name: 'Audit Category' }
+Clicked auditCategoryOption using locator { text: 'Project Risks' }
+Clicked auditClass using locator { role: 'combobox', name: 'AuditClass' }
+Clicked auditClassOption using locator { text: 'Financial Impact' }
+Clicked lineOfBusiness using locator { role: 'combobox', name: 'Line Of Business' }
+Clicked lineOfBusinessOption using locator { text: 'Product Testing' }
+Filled businessSponsor using locator { role: 'textbox', name: 'Business Sponsor' }
+Filled businessInitiator using locator { role: 'textbox', name: 'Business Request Initiator' }
+Clicked projectManager using locator { role: 'combobox', name: 'Project Manager' }
+Clicked projectManagerOption using locator { text: 'Taimoor A Hasan' }
+Clicked teamSelect using locator { locator: '.ant-select-selection-overflow' }
+Clicked teamOption using locator { text: 'Software Testing Team' }
+Clicked createAuditButton using locator { role: 'button', name: 'Create Audit' }

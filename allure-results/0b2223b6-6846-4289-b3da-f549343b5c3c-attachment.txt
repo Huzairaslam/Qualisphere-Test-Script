@@ -1,2 +1,0 @@
-Locator failed for username: { role: 'textbox', name: 'Email' }
-Locator failed for username: { role: 'textbox', name: 'Input Email' }

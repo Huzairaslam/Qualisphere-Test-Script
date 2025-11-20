@@ -1,2 +1,0 @@
-Filled password using locator { role: 'textbox', name: 'Password' }
-Clicked loginButton using locator { role: 'button', name: 'Login' }
